@@ -1,26 +1,25 @@
 package src;
 
+import java.util.Stack;
+
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        String input = "level";
-        char[] charArray = input.toCharArray();
-        int left = 0;
-        int right = charArray.length - 1;
-        boolean isPalindrome = true;
+        String input = "civic";
+        Stack<Character> stack = new Stack<>();
 
-        while (left < right) {
-            if (Character.toLowerCase(charArray[left]) != Character.toLowerCase(charArray[right])) {
-                isPalindrome = false;
-                break;
-            }
-            left++;
-            right--;
+        for (int i = 0; i < input.length(); i++) {
+            stack.push(input.charAt(i));
         }
 
-        System.out.println("--- UC4: Character Array Based Palindrome Check ---");
+        String reversed = "";
+        while (!stack.isEmpty()) {
+            reversed += stack.pop();
+        }
+
+        System.out.println("--- UC5: Stack-Based Palindrome Checker ---");
         System.out.println("Word: " + input);
 
-        if (isPalindrome) {
+        if (input.equalsIgnoreCase(reversed)) {
             System.out.println("Result: It is a palindrome.");
         } else {
             System.out.println("Result: It is not a palindrome.");
