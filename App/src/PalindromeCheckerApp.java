@@ -5,12 +5,14 @@ public class PalindromeCheckerApp {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("--- UC2: HardCode/Manual Logic Palindrome Checker ---");
         System.out.print("Enter a word: ");
         String input = sc.nextLine();
 
         int left = 0;
         int right = input.length() - 1;
         boolean isPalindrome = true;
+
 
         while (left < right) {
             if (Character.toLowerCase(input.charAt(left))
@@ -23,9 +25,9 @@ public class PalindromeCheckerApp {
         }
 
         if (isPalindrome) {
-            System.out.println("It is a palindrome.");
+            System.out.println("Result: '" + input + "' is a palindrome.");
         } else {
-            System.out.println("It is not a palindrome.");
+            System.out.println("Result: '" + input + "' is not a palindrome.");
         }
 
         sc.close();
